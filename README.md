@@ -35,4 +35,4 @@ The code consists of several functions:
 
 ## Contact
 
-For any questions or inquiries, please contact [your_email@example.com](mailto:your_email@example.com).
+For any questions or inquiries, please contact: Geofrey at ntalegeofrey@gmail.com.
