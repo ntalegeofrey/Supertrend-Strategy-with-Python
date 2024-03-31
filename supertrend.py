@@ -118,8 +118,6 @@ def plot_data(df, symbol):
     mpf.plot(df, addplot=apd, type='candle', volume=True, style='charles', xrotation=20, title=str(symbol + ' Supertrend Plot'), fill_between=fills)
 
 def strategy_performance(strategy_df, capital=100, leverage=1):
-    # Calculate the benchmark  
-    strategy_df['benchmark'] = capital * leverage * (1 + strategy_df['close'].pct_change())
     # Initialize the performance variables
     cumulative_balance = capital
     investment = capital
@@ -199,8 +197,6 @@ def strategy_performance(strategy_df, capital=100, leverage=1):
 
 # Plot the performance curve
 def plot_performance_curve(strategy_df):
-    # Plot the cumulative balance and the benchmark performace curves
-    plt.plot(strategy_df['benchmark'], label='Benchmark')
     plt.plot(strategy_df['cumulative_balance'], label='Strategy')
     plt.title('Performance Curve')
     plt.xlabel('Date')
@@ -212,7 +208,7 @@ def plot_performance_curve(strategy_df):
 
 if __name__ == '__main__':
     # Initialize data fetch parameters
-    symbol = "AAVE/USDT"
+    symbol = "BTC/USDT"
     start_date = "2022-12-1"
     interval = '4h'
     exchange = ccxt.binance()
